@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carnet d'adresses</title>
+  <link rel="stylesheet" href="carnet.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+ <header> <h2>Le Canet d'adresses Local</h2></header>
+ <br>
+ <br>
+  <div id="en-tete">
+    <h1>Gérer la liste de contacts</h1>
+    <button id="new-contact"><img src="./images/plus.png"></button>
+    <button id="clear-all"><img src="./images/effacer.png"></button>
+
+  </div>
+  <br>
+  <br>
+
+  <div class="row justify-content-around" style="width:100%">
+    <div class="col-4" id="contacts-list" style="height: 100%;
+    overflow-y: auto;">
+      <h3>Contacts enregistrés</h3>
+      <p id="no-contacts-msg">Aucun contact pour le moment</p>
+      <span id="contacts"></span>
+
+    </div>
+    <div class="col-4" style="height: 100%;overflow-y: auto;">
+      <div id="contact-details">
+        <h1>Détails du contact</h1>
+        <div id="contact-info"></div>
+        
+      </div>
+    
+      <div id="contact-form-container">
+        <h1>Nouveau contact</h1>
+        <form id="contact-form">
+          <fieldset class="form-group border p-3">
+            <legend class="w-auto px-2">Saisie/modification d'un contact</legend>
+
+            <div class="form-group">
+              <label for="civilite">Civilite :</label>
+              <select id="civilite" name="civilite" class="form-control"  required>
+                <option value="" disabled selected hidden>Civilité</option>
+                <option value="Madame">Madame</option>
+                <option value="Mademoiselle">Mademoiselle</option>
+                <option value="Monsieur">Monsieur</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="prenom">Prénom :</label>
+              <input name="prenom" type="text" id="prenom" placeholder="Prénom"class="form-control"  required >
+            </div>
+
+            <div class="form-group">
+              <label for="nom">Nom :</label>
+              <input name="nom" type="text" id="nom" placeholder="Nom" class="form-control"  required>
+            </div>
+
+
+            <div class="form-group">
+              <label for="telephone">Numéro de téléphone :</label>
+              <input name="telephone" type="tel" id="telephone" placeholder="Numéro de téléphone" class="form-control"  required>
+            </div>
+            <div id="btn-form"> 
+              <button type="submit" id="save">Enregistrer</button>
+              <button type="button" id="clear">Effacer</button>
+            </div>
+
+          </fieldset>
+
+        </form>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="carnet.js"></script>
+</body>
+
+</html>

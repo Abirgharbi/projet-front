@@ -1,0 +1,135 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("./images/background.jpg"); 
+  background-size: cover;
+ 
+  background-color: rgba(138, 154, 168, 0.75);
+  backdrop-filter: blur(1px);
+  color: white;
+}
+
+
+#contacts-list {
+  background-color: rgba(138, 154, 168, 0.75);
+  width: 200px;
+  margin-left: 60px;
+  color: white;
+  padding: 20px;
+
+}
+input[type="text"],
+input[type="tel"],
+select[name="civilite"]{
+  background-color: rgba(255, 255, 255, 0.541);
+}
+
+
+#btn-form {
+  float: right;
+ 
+}
+legend  {
+  background-color:rgb(237, 91, 37,0.7); 
+}
+
+.contact {
+  float: left;
+ color: white;
+}
+
+.form-detail {
+  float: right;
+  color: white;
+  
+}
+
+#contact-form-container {
+  display: none;
+  color: white;
+}
+
+#contact-details {
+  display: none;
+  color: white;
+  padding: 20px;
+}
+
+.selected-contact {
+  font-weight: bold;
+}
+
+#no-contacts-msg {
+  display: none;
+  color: white;
+}
+
+#en-tete {
+  text-align: center;
+  color: white;
+}
+header {
+  background-color: rgba(138, 154, 168, 0.75);
+  backdrop-filter: blur(1px);
+  height: 70px;
+  color: white;
+}
+h2{
+ padding-left: 20px;
+ padding-top: 10px;
+}
+
+ul {
+
+  list-style-image: url("./images/profil.png");
+}
+li{
+  padding-top: 10px;
+}
+.col-4{
+  background-color: rgba(138, 154, 168, 0.75);
+  backdrop-filter: blur(1px);
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding-left: 2px;
+  padding-right: 100px;
+  padding-top: 5px;
+
+}
+
+table {
+
+  color: white;
+  font-size: large;
+  font-weight: bold;
+
+  width: 100%;
+  table-layout: fixed;
+  text-align: left;
+  margin-bottom: 10px;
+
+}
+button{
+  background-color: rgb(237, 91, 37,0.7); 
+  padding: 15px;
+  border-radius: 10px;
+  border-color: white;
+}
+#save,#clear,#edit-contact {
+  height: 40px;
+  padding: 2px;
+  color: white;
+  width: 150px;
+
+}
+
+tr:hover{
+  background-color: rgb(237, 91, 37,0.7);
+
+}
+.selected{
+  background-color: rgb(237, 91, 37,0.7); 
+}
+button:hover{ background-color: rgba(254, 68, 0, 0.726); }
