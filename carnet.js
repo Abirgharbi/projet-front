@@ -8,27 +8,37 @@ $(document).ready(function () {
   } else {
     contacts = [];
   }
-  contacts = sortContacts();
+  showSortedContacts();
 
-  showContacts();
 
   // Show contact details 
-$('#contacts').on('click', 'tr', function () {
+  $('#contacts').on('click', 'tr', function () {
     const selectedIndex = $(this).find('li').data('index');
     const isSelected = $(this).hasClass('selected');
-    $('#contacts tr').removeClass('selected'); 
-    $('#contact-details').toggle(!isSelected); 
+    $('#contacts tr').removeClass('selected');
+    $('#contact-details').toggle(!isSelected);
     if (!isSelected) {
-        $(this).addClass('selected');
-        showContactDetails(selectedIndex);
+      $(this).addClass('selected');
+      showContactDetails(selectedIndex);
     }
-});
+  });
 
 
   // Show new contact form
   $('#new-contact').click(function () {
     $('#contact-form-container').toggle();
   });
+
+
+  function verifyContact(newContact) {
+    for (let i = 0; i < contacts.length; i++) {
+      if (contacts[i].phoneNumber === newContact.phoneNumber) {
+        return true;
+      }
+    }
+    return false;
+  }
+
 
   // Save new contact
   $('#contact-form').submit(function (e) {
@@ -39,11 +49,17 @@ $('#contacts').on('click', 'tr', function () {
       lastName: $('#nom').val().toUpperCase(),
       phoneNumber: $('#telephone').val()
     };
-    contacts.push(newContact);
-    localStorage.setItem('contacts', JSON.stringify(contacts));
-    showSortedContacts();
-    $('#contact-form')[0].reset();
-    $('#contact-form-container').hide();
+    if (!verifyContact(newContact)) {
+      contacts.push(newContact);
+      localStorage.setItem('contacts', JSON.stringify(contacts));
+      showSortedContacts();
+      $('#contact-form')[0].reset();
+      $('#contact-form-container').hide();
+    }
+    else {
+      alert("Contact existe deja");
+    }
+
   });
 
   // Clear form
@@ -62,15 +78,23 @@ $('#contacts').on('click', 'tr', function () {
 
   function sortContacts() {
 
-    let copiedContacts = JSON.parse(JSON.stringify(contacts));
-    return copiedContacts.sort((a, b) => {
+    let copie = JSON.parse(JSON.stringify(contacts));
+    return copie.sort((a, b) => {
 
-      const lastNameComparison = a.lastName.toLowerCase() > b.lastName.toLowerCase() ? 1 : -1;
-      if (lastNameComparison !== 0) {
-        return lastNameComparison;
+      if (a.lastName.toLowerCase() > b.lastName.toLowerCase()) {
+        return 1;
+      } else if (a.lastName.toLowerCase() < b.lastName.toLowerCase()) {
+        return -1;
+      } else {
+
+        if (a.firstName.toLowerCase() > b.firstName.toLowerCase()) {
+          return 1;
+        } else if (a.firstName.toLowerCase() < b.firstName.toLowerCase()) {
+          return -1;
+        } else {
+          return 0;
+        }
       }
-
-      return a.firstName.toLowerCase() > b.firstName.toLowerCase() ? 1 : -1;
     });
   }
 
@@ -81,9 +105,10 @@ $('#contacts').on('click', 'tr', function () {
     } else {
       $('#no-contacts-msg').hide();
       contacts.forEach(function (contact, index) {
+
         $('#contacts').append(`
         <table>
-          <tr data-index="${index}">
+          <tr>
             <td>
               <ul>
                 <li data-index="${index}">${contact.firstName} ${contact.lastName}</li>
@@ -113,8 +138,9 @@ $('#contacts').on('click', 'tr', function () {
       
     `);
     $('#contact-details').show();
-    $('#contacts tr').removeClass('selected-contact');
+
     $('#edit-contact').click(function () {
+
       $('#contact-form-container').show();
       $('#civilite').val(contact.civility);
       $('#prenom').val(contact.firstName);

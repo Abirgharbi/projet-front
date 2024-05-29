@@ -10,9 +10,11 @@
 </head>
 
 <body>
- <header> <h2>Le Canet d'adresses Local</h2></header>
- <br>
- <br>
+  <header>
+    <h2>Le Canet d'adresses Local</h2>
+  </header>
+  <br>
+  <br>
   <div id="en-tete">
     <h1>Gérer la liste de contacts</h1>
     <button id="new-contact"><img src="./images/plus.png"></button>
@@ -23,8 +25,7 @@
   <br>
 
   <div class="row justify-content-around" style="width:100%">
-    <div class="col-4" id="contacts-list" style="height: 100%;
-    overflow-y: auto;">
+    <div class="col-4" id="contacts-list">
       <h3>Contacts enregistrés</h3>
       <p id="no-contacts-msg">Aucun contact pour le moment</p>
       <span id="contacts"></span>
@@ -34,9 +35,9 @@
       <div id="contact-details">
         <h1>Détails du contact</h1>
         <div id="contact-info"></div>
-        
+
       </div>
-    
+
       <div id="contact-form-container">
         <h1>Nouveau contact</h1>
         <form id="contact-form">
@@ -45,7 +46,7 @@
 
             <div class="form-group">
               <label for="civilite">Civilite :</label>
-              <select id="civilite" name="civilite" class="form-control"  required>
+              <select id="civilite" name="civilite" class="form-control" required>
                 <option value="" disabled selected hidden>Civilité</option>
                 <option value="Madame">Madame</option>
                 <option value="Mademoiselle">Mademoiselle</option>
@@ -55,20 +56,21 @@
 
             <div class="form-group">
               <label for="prenom">Prénom :</label>
-              <input name="prenom" type="text" id="prenom" placeholder="Prénom"class="form-control"  required >
+              <input name="prenom" type="text" id="prenom" placeholder="Prénom" class="form-control" required>
             </div>
 
             <div class="form-group">
               <label for="nom">Nom :</label>
-              <input name="nom" type="text" id="nom" placeholder="Nom" class="form-control"  required>
+              <input name="nom" type="text" id="nom" placeholder="Nom" class="form-control" required>
             </div>
 
 
             <div class="form-group">
               <label for="telephone">Numéro de téléphone :</label>
-              <input name="telephone" type="tel" id="telephone" placeholder="Numéro de téléphone" class="form-control"  required>
+              <input name="telephone" type="tel" id="telephone" placeholder="Numéro de téléphone" class="form-control"
+                required>
             </div>
-            <div id="btn-form"> 
+            <div id="btn-form">
               <button type="submit" id="save">Enregistrer</button>
               <button type="button" id="clear">Effacer</button>
             </div>
@@ -77,7 +79,7 @@
 
         </form>
       </div>
-      
+
     </div>
   </div>
 

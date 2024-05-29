@@ -2,7 +2,6 @@ body {
   font-family: Arial, sans-serif;
   background-image: url("./images/background.jpg"); 
   background-size: cover;
- 
   background-color: rgba(138, 154, 168, 0.75);
   backdrop-filter: blur(1px);
   color: white;
@@ -15,6 +14,10 @@ body {
   margin-left: 60px;
   color: white;
   padding: 20px;
+  max-height: 400px; 
+  overflow-y: auto;
+  height: 100%;
+  overflow-y: auto;
 
 }
 input[type="text"],
@@ -46,6 +49,8 @@ legend  {
 #contact-form-container {
   display: none;
   color: white;
+  max-height: 400px; 
+  overflow-y: auto;
 }
 
 #contact-details {
@@ -54,9 +59,6 @@ legend  {
   padding: 20px;
 }
 
-.selected-contact {
-  font-weight: bold;
-}
 
 #no-contacts-msg {
   display: none;
@@ -124,6 +126,7 @@ button{
   width: 150px;
 
 }
+
 
 tr:hover{
   background-color: rgb(237, 91, 37,0.7);
