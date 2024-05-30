@@ -6,7 +6,9 @@ body {
   backdrop-filter: blur(1px);
   color: white;
 }
-
+#combo{
+  width: 100px;
+}
 
 #contacts-list {
   background-color: rgba(138, 154, 168, 0.75);
@@ -17,7 +19,7 @@ body {
   max-height: 400px; 
   overflow-y: auto;
   height: 100%;
-  overflow-y: auto;
+
 
 }
 input[type="text"],
@@ -38,7 +40,7 @@ legend  {
 .contact {
   float: left;
  color: white;
-}
+  }
 
 .form-detail {
   float: right;
@@ -49,8 +51,7 @@ legend  {
 #contact-form-container {
   display: none;
   color: white;
-  max-height: 400px; 
-  overflow-y: auto;
+ 
 }
 
 #contact-details {

@@ -29,7 +29,7 @@ $(document).ready(function () {
     $('#contact-form-container').toggle();
   });
 
-
+// verify phone number 
   function verifyContact(newContact) {
     for (let i = 0; i < contacts.length; i++) {
       if (contacts[i].phoneNumber === newContact.phoneNumber) {
@@ -75,7 +75,7 @@ $(document).ready(function () {
     $('#contact-details').hide();
   });
 
-
+//Sort contacts
   function sortContacts() {
 
     let copie = JSON.parse(JSON.stringify(contacts));
@@ -98,6 +98,7 @@ $(document).ready(function () {
     });
   }
 
+  // show contacts list
   function showContacts() {
     $('#contacts').empty();
     if (contacts.length === 0) {
@@ -120,13 +121,14 @@ $(document).ready(function () {
       });
     }
   }
+  // show sorted contacts
   function showSortedContacts() {
 
     contacts = sortContacts();
 
     showContacts();
   }
-
+ //show contacts details 
   function showContactDetails(index) {
     let contact = contacts[index];
     $('#contact-info').html(`
@@ -138,7 +140,8 @@ $(document).ready(function () {
       
     `);
     $('#contact-details').show();
-
+    
+ // open edit from 
     $('#edit-contact').click(function () {
 
       $('#contact-form-container').show();
